@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const argv = require('minimist')(process.argv.slice(2));
+const chalk = require('chalk');
 
 const help = `
 Usage: wo <command> <input> <options>

@@ -2,6 +2,7 @@
   "name": "chen",
   "version": "1.0.0",
   "description": "fisrt npm project",
+  "license": "MIT",
   "main": "index.js",
   "bin": {
     "miao": "index.js"
