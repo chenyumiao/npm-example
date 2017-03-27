@@ -1,5 +1,5 @@
 {
-  "name": "chen",
+  "name": "chenyumiao",
   "version": "1.0.0",
   "description": "fisrt npm project",
   "license": "MIT",
@@ -12,6 +12,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenyumiao/npm-example.git"
+  },
   "dependencies": {
     "async": "^2.0.1",
     "chalk": "^1.1.3",
