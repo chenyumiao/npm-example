@@ -1,16 +1,18 @@
+#!/usr/bin/env node
 const argv = require('minimist')(process.argv.slice(2));
+const chalk = require('chalk');
+const pkg = require('./package');
 
 const help = `
 Usage: wo <command> <input> <options>
 
 command:
-  build     - clear && build all source files to dest
-  deploy    - build && upload to ftp server
-  release   - build && taged git source - Experimental
-  start     - build && start a local server with default root .www
-  clear     - by default, rm -rf build .www
-  gen       - generate a new demo project
-
+  build     ${chalk.gray('- clear && build all source files to dest')}
+  deploy    ${chalk.gray('- build && upload to ftp server')}
+  release   ${chalk.gray('- build && taged git source - (Experimental)')}
+  start     ${chalk.gray('- build && start a local server with default root [.www]')}
+  clear     ${chalk.gray('- by default, rm -rf build .www')}
+  gen       ${chalk.gray('- generate a new demo project')}
 input:
   path/to/dir
   glob/pattern/**
@@ -18,29 +20,28 @@ input:
   component_name
   component_name1,component_name2
   gen_project_name
-
 options:
-  --sprite     - concat sprites to one image and generate a style file
-  --nunjucks    - compile nunjucks to html
-  --uglify      - compress scripts
-  --imagemin    - optmize images
-  --sass        - compile sass to css
-  --debug       - build uncompressed js file
-  --force       - deploy file with no cache
-  --currdir     - generate demo project file to current directory
-  --config      - specified config file path
+  --sprite      ${chalk.gray('- concat sprites to one image and generate a style file')}
+  --nunjucks    ${chalk.gray('- compile nunjucks to html')}
+  --uglify      ${chalk.gray('- compress scripts')}
+  --imagemin    ${chalk.gray('- optmize images')}
+  --sass        ${chalk.gray('- compile sass to css')}
+  --debug       ${chalk.gray('- build uncompressed js file')}
+  --force       ${chalk.gray('- deploy file with no cache')}
+  --currdir     ${chalk.gray('- generate demo project file to current directory')}
+  --config      ${chalk.gray('- specified config file path')}
 `;
 
 const logo = `
 ┬ ┬╔═╗╔═╗╔═╗
 │││║ ║║ ║║ ║
 └┴┘╚═╝╚═╝╚═╝
--------pkg.version
+-------${pkg.version}
 `;
 
 if (argv.h) {
     return console.log(help);
 }
 if (argv.v) {
-    return console.log(pkg.version);
+    return console.log(logo);
 }
