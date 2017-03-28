@@ -2,6 +2,7 @@
 'use strict';
 const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
+const pkg = require('./package');
 
 const help = `
 Usage: wo <command> <input> <options>
